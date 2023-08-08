@@ -21,6 +21,8 @@ import os
 
 ## ----------- CONFIG START ----------- ##
 
+load_dotenv()
+
 INFURA_ID = os.environ['INFURA_ID']
 PUBLIC_KEY = os.environ['PUBLIC_KEY']
 XEN_CONTRACT_ADDRESS = os.environ['XEN_CONTRACT_ADDRESS']
@@ -78,12 +80,12 @@ xen_abi = '[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"
 # Get Ethereum cost in USD
 def get_eth_usd_value():
     cg = CoinGeckoAPI()
-    price = cg.get_price(ids=['ethereum'], vs_currencies='usd')
-    usd_value = price['ethereum']['usd']
+    price = cg.get_price(ids=['matic-network'], vs_currencies='usd')
+    usd_value = price['matic-network']['usd']
     return usd_value
 
 def fetch_abi(address):
-    response = requests.get(f'https://api.etherscan.io/api?module=contract&action=getabi&address={address}')
+    response = requests.get(f'https://api.polygonscan.io/api?module=contract&action=getabi&address={address}')
     return json.dumps(json.loads(response.json()['result']))
 
 def get_timestamp():
@@ -131,6 +133,7 @@ for i in range(1, num_of_xenft_to_mint+1):
     # Uncomment if you want to fetch ABI directly from the contract, otherwise leave commented
     #xen_abi = fetch_abi(xen_contract_address)
 
+    get_eth_usd_value()
     if use_automatic_max_term:
         term = fetch_current_max_term(xen_contract_address) # This will fetch the current MAX TERM automatically from XEN smart contract.
     else:
