@@ -13,7 +13,6 @@ This script is provided 'as is,' and the creator makes no warranty, express or i
 For more details about how to operate the script, visit: [https://xen.pub/mint-collector-xenfts-at-the-lowest-gwei-with-this-python-code/](https://xen.pub/blog/mint-collector-xenfts-at-the-lowest-gwei-with-this-python-code/)
 
 - script name    : xenft-creator.py
-- author         : Jozef Jarosciak (Twitter: https://twitter.com/jarosciak)
 - first released : 2023-JAN-09
 - last update:   : 2023-JAN-29
 - execute        : python.exe xenft-creator.py (Use IDE it's much easier)
@@ -25,6 +24,3 @@ For more details about how to operate the script, visit: [https://xen.pub/mint-c
 # HOW CAN YOU HELP?
 - **Donate**: ETH donations are much appreciated: https://xen.pub/donate/
 - **Coders**: Please enhance the below script! Nothing would make me happier than seeing this script being adopted and enhanced by the community.
-
-# LICENSE
-The code is available under the **MIT license** - https://github.com/JozefJarosciak/xenft-creator/blob/main/LICENSE

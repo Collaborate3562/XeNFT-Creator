@@ -169,7 +169,7 @@ for i in range(1, num_of_xenft_to_mint+1):
 
     eth_cost_in_usd = get_eth_usd_value()
     balance_before_claim = round(float(web3.fromWei(web3.eth.getBalance(your_wallet_address), 'ether')),6)
-    total_account_value = round(eth_cost_in_usd*balance_before_claim,2)
+    total_account_value = round(eth_cost_in_usd * balance_before_claim,2)
 
 
 
@@ -183,7 +183,6 @@ for i in range(1, num_of_xenft_to_mint+1):
         })
         gas = web3.eth.estimateGas(tx)
         tx['gas'] = gas
-
 
         if web3.eth.getBalance(your_wallet_address) < gas*maxFeePerGas:
             raise Exception("Not enough Ether in your wallet address to pay for the transaction")
